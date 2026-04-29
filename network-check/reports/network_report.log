@@ -1,0 +1,40 @@
+===== Network Troubleshooting Report =====
+Time: Wed Apr 29 17:35:09 UTC 2026
+Target: google.com
+=========================================
+
+1. DNS Check
+172.217.26.46
+
+2. Ping Check
+PING google.com (172.217.26.46) 56(84) bytes of data.
+64 bytes from nrt12s17-in-f46.1e100.net (172.217.26.46): icmp_seq=1 ttl=118 time=12.3 ms
+64 bytes from nrt12s17-in-f46.1e100.net (172.217.26.46): icmp_seq=2 ttl=118 time=9.10 ms
+64 bytes from nrt12s17-in-f46.1e100.net (172.217.26.46): icmp_seq=3 ttl=118 time=10.4 ms
+64 bytes from nrt12s17-in-f46.1e100.net (172.217.26.46): icmp_seq=4 ttl=118 time=9.39 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 2997ms
+rtt min/avg/max/mdev = 9.101/10.286/12.266/1.238 ms
+
+3. Route Check
+172.217.26.46 via 172.21.32.1 dev eth0 src 172.21.40.202 uid 1000 
+    cache 
+
+4. Port Check
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-04-29 17:35 UTC
+Nmap scan report for google.com (172.217.26.46)
+Host is up (0.0072s latency).
+Other addresses for google.com (not scanned): 2404:6800:4002:830::200e
+rDNS record for 172.217.26.46: nrt12s17-in-f46.1e100.net
+
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
+
+5. HTTP Check
+HTTP/2 301 
+
+Network check completed.
